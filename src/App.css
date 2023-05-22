@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  font-family: "Lobster", cursive;
+  background-image: url('img/3.jpeg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
