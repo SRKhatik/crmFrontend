@@ -8,7 +8,6 @@ import useTicketUpdate from "../hooks/useTicketUpdate";
 import useUsersUpdate from "../hooks/useUserUpdate";
 import TicketsUpdateModal from "../components/TicketsUpdateModal/TicketUpdateModal";
 import TicketsTable from "../components/Ticketstable/ticketsTable";
-
 const Admin = () => {
   //creating status
   const [ticketDetails, fetchTickets] = useFetchTickets();
@@ -33,7 +32,7 @@ const Admin = () => {
   return (
     <div className="row d-flex vh-100%">
       <div className="col-1">
-        <Sidebar />
+            <Sidebar /> 
       </div>
       <div className="col my-4">
         <div className="container">
@@ -50,7 +49,6 @@ const Admin = () => {
               style={{
                 color: "black",
                 background: "gainsboro",
-                backdropFilter: "",
                 borderWidth: "1px",
                 fontFamily: "Lobster, cursive",
               }}
@@ -68,7 +66,7 @@ const Admin = () => {
                 sorting: true,
                 exportButton: true,
                 headerStyle: {
-                  backgroundColor: "gray",
+                  backgroundColor: "mediumblue",
                   fontSize: "1.2em",
                   alignItems: "center",
                   color: "white",
@@ -87,25 +85,21 @@ const Admin = () => {
                 background: "rgba(0, 0, 0, 0.3)",
                 backdropFilter: "blur(3px)",
                 borderWidth: "10px",
-                borderColor: "rgb(33, 232, 254)",
                 fontFamily: "Lobster, cursive",
               }}
             >
-              <Modal.Header
-                closeButton
-                style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-              >
-                <Modal.Title style={{ color: "red", fontSize: "2rem" }}>
+              <Modal.Header closeButton style={{ backgroundColor: "yellow" }}>
+                <Modal.Title style={{ color: "#000", fontSize: "2rem" }}>
                   Edit Users Details...
                 </Modal.Title>
               </Modal.Header>
-              <Modal.Body style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+              <Modal.Body style={{ backgroundColor: "yellow" }}>
                 <form onSubmit={updateUserFn}>
                   <div className="p-1">
-                    <h4 className="card-subtitle mb-2 text-primary">
+                    <h4 className="card-subtitle mb-2 text-dark">
                       UserId : {selectedCurrUser.userId}
                     </h4>
-                    <h5 className="card-subtitle mb-2 text-primary ">
+                    <h5 className="card-subtitle mb-2 text-dark ">
                       UserType : {selectedCurrUser.userTypes}
                     </h5>
                     <div className="input-group mb-3">

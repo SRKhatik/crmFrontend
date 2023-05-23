@@ -26,13 +26,13 @@ function TicketsUpdateModal(props) {
     >
       <Modal.Header
         closeButton
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+        style={{ backgroundColor: "yellow" }}
       >
-        <Modal.Title style={{ color: "red", fontSize: "2rem" }}>
+        <Modal.Title style={{ color: "#000", fontSize: "2rem" }}>
           Edit Tickets Details...
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+      <Modal.Body style={{ backgroundColor: "yellow" }}>
         <form onSubmit={updateTicketFn}>
           <div className="p-1">
             <h4 className="card-subtitle mb-2 ">
@@ -131,7 +131,7 @@ function TicketsUpdateModal(props) {
               <textarea
                 disabled={disabledFields.description}
                 type="text"
-                className="md-textarea form-control text-primary"
+                className="md-textarea form-control text-danger"
                 name="description"
                 rows="3"
                 value={selectedCurrTicket.description}

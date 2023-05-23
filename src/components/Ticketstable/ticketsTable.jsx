@@ -4,7 +4,7 @@ function TicketsTable(props) {
     <MaterialTable
       style={{
         color: "black",
-        background: "	gainsboro",
+        background: "lightgray",
         borderWidth: "1px",
       }}
       onRowClick={(event, rowData) => props.editTicket(rowData)}
@@ -21,9 +21,9 @@ function TicketsTable(props) {
       options={{
         sorting: true,
         exportButton: true,
-        actionsColumnIndex: -1,
+        serioulnumber:true,
         headerStyle: {
-          backgroundColor: "gray",
+          backgroundColor: "mediumblue",
           fontSize: "1.2em",
           alignItems: "center",
           color: "white",
