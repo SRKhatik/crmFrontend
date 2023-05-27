@@ -1,13 +1,28 @@
-import React, { useContext } from 'react';
-import { CSidebar, CSidebarNav, CNavItem, CSidebarToggler } from '@coreui/react';
-import logo from '../components/images/logo3.png';
+import React, { useContext, useState } from "react";
+import {
+  CSidebar,
+  CSidebarNav,
+  CNavItem,
+  CSidebarToggler,
+} from "@coreui/react";
+import logo from "../components/images/logo3.png";
 
 const Sidebar = () => {
 
-
   const logout = () => {
+    // Swal.fire({
+    //   title: 'Error!',
+    //   text: 'Do you want to continue',
+    //   icon: 'error',
+    //   confirmButtonText: 'Cool'
+    // })
     localStorage.clear();
-    window.location.href = '/';
+    window.location.href = "/";
+  };
+  
+
+  const toggleTable = (props) => {
+    props.userTableOpen(true);
   };
 
   return (
@@ -16,23 +31,23 @@ const Sidebar = () => {
         unfoldable
         className="vh-100"
         style={{
-          background: 'rgba(0, 0, 0, 0.3)',
-          backdropFilter: 'blur(3px)',
-          borderWidth: '1px',
-          borderColor: 'rgb(33, 232, 254)',
-          fontFamily: 'Lobster, cursive',
+          background: "rgba(0, 0, 0, 0.3)",
+          backdropFilter: "blur(3px)",
+          borderWidth: "1px",
+          borderColor: "rgb(33, 232, 254)",
+          fontFamily: "Lobster, cursive",
         }}
       >
         <CSidebarNav>
           <CNavItem className="my-2">
             <img
               src={logo}
-              style={{ height: '70px', width: '70px' }}
+              style={{ height: "70px", width: "70px" }}
               alt="logo"
             />
             <div
               className="text-decoration-none"
-              style={{ color: 'black', background: 'aqua' }}
+              style={{ color: "black", background: "aqua" }}
             >
               CRM APP
             </div>
@@ -45,6 +60,16 @@ const Sidebar = () => {
           <CNavItem href="#">
             <i className="bi bi-house text-white m-2 ps-0" />
             <div className="text-decoration-none text-info mx-3">Home</div>
+          </CNavItem>
+
+          <CNavItem href="#">
+            <i className="bi bi-ticket-perforated-fill text-white m-2 ps-0" />
+            <div className="text-decoration-none text-info mx-3">Tickets</div>
+          </CNavItem>
+          
+          <CNavItem href="#" onClick={toggleTable}>
+            <i className="bi bi-person-bounding-box text-white m-2 ps-0" />
+            <div className="text-decoration-none text-info mx-3">Users</div>
           </CNavItem>
 
           <div onClick={logout}>
@@ -61,4 +86,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-

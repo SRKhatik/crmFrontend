@@ -4,6 +4,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import { FaUserFriends, FaUserAlt, FaUserTie } from "react-icons/all.js";
 import { userSignIn, userSignUp } from "../api/auth";
 
+
 function Login() {
   const [showSignup, setShowSignup] = useState(true);
 
@@ -149,7 +150,7 @@ function Login() {
     >
       <div>
         <h1 style={{ color: "#fff", margin: "20px",fontSize:"3rem"}}>
-          C<span style={{ color: "#FF8C00" }}>R</span>M <span style={{ color: "yellow" }}>APPLICATION</span>
+          <span style={{color:"aqua"}}>CRM APPLICATION</span>
         </h1>
         <div
           style={{
@@ -162,7 +163,7 @@ function Login() {
           }}
           className="card p-3 rounded-4 shadow-lg"
         >
-          <h2 className="text-center text-warning">
+          <h2 className="text-center text-white">
             {showSignup ? "SIGN UP" : "LOG IN"}
           </h2>
 
@@ -236,27 +237,27 @@ function Login() {
             <div className="d-flex justify-content-center align-items-center">
               <div className="input-group">
                 <input
-                  className="btn btn-danger form-control text-white m-2"
+                  className="btn btn-primary form-control text-white m-2"
                   type="submit"
                   value={showSignup ? "Sign Up" : "Log In"}
                 />
               </div>
             </div>
             <div
-              className="text-center text-warning m-2"
+              className="text-center text-white m-2"
               style={{ cursor: "pointer" }}
               onClick={toggleSignup}
             >
               {showSignup
-                ? "Already have an account? "
-                : "Don't have an account? "}
+                ? "Already have an account ? "
+                : "Don't have an account ? "}
               <span
                 style={{ color: "white", textDecoration: "underline" }}
                 onMouseEnter={(e) => {
-                  e.target.style.color = "green";
+                  e.target.style.color = "#FF00FF";
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.color = "aqua";
+                  e.target.style.color = "white";
                 }}
                 onClick={toggleSignup}
               >

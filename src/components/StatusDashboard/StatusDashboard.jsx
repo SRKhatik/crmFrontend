@@ -32,23 +32,23 @@ function StatusDashboard(props) {
                       className="card"
                       style={{
                         boxShadow: "(0 0 10px)",
-                        borderColor: "whitesmoke",
-                        borderBottom: "7px solid aqua",
-                        background: "rgba(0, 0, 0, 0.1)",
+                        borderColor: "#fff",
+                        borderBottom: "7px solid 	blueviolet",
+                        background: "rgba(0,0, 0, 0.4)",
                         backdropFilter: "blur(3px)",
                       }}
                     >
                       <div className="card-body text-white">
-                        <h4 style={{ color: "aqua" }}>
-                          <i className="bu bi-pencil mx-2"></i>
+                        <h4 style={{ color: "white" }}>
+                          <i className="text-primary bu bi-pencil mx-2"></i>
                           OPEN
                         </h4>
-                        <hr style={{ borderWidth: "4px", color: "aqua" }} />
+                        <hr style={{ borderWidth: "4px", color: "white" }} />
                         <div className="row">
                           <div className="col">
                             <div
                               style={{
-                                color: "aqua",
+                                color: "white",
                                 fontSize: 4 + "em",
                                 marginTop: -25,
                               }}
@@ -62,8 +62,8 @@ function StatusDashboard(props) {
                                 value={statusDetails.pending}
                                 text={`${statusDetails.pending}%`}
                                 styles={buildStyles({
-                                  textColor: "aqua",
-                                  pathColor: "aqua",
+                                  textColor: "white",
+                                  pathColor: "blue",
                                 })}
                               />
                             </div>
@@ -77,23 +77,23 @@ function StatusDashboard(props) {
                       className="card shadow shadow-white "
                       style={{
                         boxShadow: "0 0 10px )",
-                        borderColor: "whitesmoke",
-                        borderBottom: "7px solid 	#FFFF00",
-                        background: "rgba(0, 0, 0, 0.1)",
+                        borderColor: "white",
+                        borderBottom: "7px solid 		blueviolet",
+                        background: "rgba(0, 0, 0, 0.4)",
                         backdropFilter: "blur(3px)",
                       }}
                     >
                       <div className="card-body text-white">
-                        <h4 style={{ color: "	#FFFF00" }}>
-                          <i className="text-#FFFF00 bi bi-lightning-charge mx-2"></i>
+                        <h4 style={{ color: "white" }}>
+                          <i className="text-warning  bi bi-lightning-charge mx-2"></i>
                           PROGRESS
                         </h4>
-                        <hr style={{ borderWidth: "4px", color: "#FFFF00" }} />
+                        <hr style={{ borderWidth: "4px", color: "white" }} />
                         <div className="row">
                           <div className="col">
                             <div
                               style={{
-                                color: "#FFFF00",
+                                color: "white",
                                 fontSize: 4 + "em",
                                 marginTop: -25,
                               }}
@@ -107,8 +107,8 @@ function StatusDashboard(props) {
                                 value={statusDetails.progress}
                                 text={`${statusDetails.progress}%`}
                                 styles={buildStyles({
-                                  textColor: "#FFFF00",
-                                  pathColor: "#FFFF00",
+                                  textColor: "white",
+                                  pathColor: "blue",
                                 })}
                               />
                             </div>
@@ -122,23 +122,23 @@ function StatusDashboard(props) {
                       className="card shadow shadow-white "
                       style={{
                         boxShadow: "0 0 10px )",
-                        borderColor: "whitesmoke",
-                        borderBottom: "7px solid #00FF00",
-                        background: "rgba(0, 0, 0, 0.1)",
+                        borderColor: "white",
+                        borderBottom: "7px solid 	blueviolet",
+                        background: "rgba(0, 0, 0, 0.4)",
                         backdropFilter: "blur(3px)",
                       }}
                     >
                       <div className="card-body text-white">
-                        <h4 style={{ color: "#00FF00" }}>
-                          <i className=" bi bi-check-circle mx-2"></i>
+                        <h4 style={{ color: "white" }}>
+                          <i className="text-success bi bi-check-circle mx-2"></i>
                           CLOSED
                         </h4>
-                        <hr style={{ borderWidth: "4px", color: "#00FF00" }} />
+                        <hr style={{ borderWidth: "4px", color: "white" }} />
                         <div className="row">
                           <div className="col">
                             <div
                               style={{
-                                color: "#00FF00",
+                                color: "white",
                                 fontSize: 4 + "em",
                                 marginTop: -25,
                               }}
@@ -154,8 +154,8 @@ function StatusDashboard(props) {
                                 value={statusDetails.closed}
                                 text={`${statusDetails.closed}%`}
                                 styles={buildStyles({
-                                  textColor: "#00FF00",
-                                  pathColor: "#00FF00",
+                                  textColor: "white",
+                                  pathColor: "blue",
                                 })}
                               />
                             </div>
@@ -169,23 +169,23 @@ function StatusDashboard(props) {
                       className="card shadow shadow-white "
                       style={{
                         boxShadow: "0 0 10px )",
-                        borderColor: "whitesmoke",
-                        borderBottom: "7px solid 	#FF0000",
-                        background: "rgba(0, 0, 0, 0.1)",
+                        borderColor: "white",
+                        borderBottom: "7px solid 		blueviolet",
+                        background: "rgba(0, 0, 0, 0.4)",
                         backdropFilter: "blur(3px)",
                       }}
                     >
                       <div className="card-body text-white">
-                        <h4 style={{ color: "	#FF0000" }}>
-                          <i className="bi bi-slash-circle mx-2"></i>
+                        <h4 style={{ color: "	white" }}>
+                          <i className=" text-danger bi bi-slash-circle mx-2"></i>
                           BLOCKED
                         </h4>
-                        <hr style={{ borderWidth: "4px", color: "#FF0000" }} />
+                        <hr style={{ borderWidth: "4px", color: "white" }} />
                         <div className="row">
                           <div className="col">
                             <div
                               style={{
-                                color: "#FF0000",
+                                color: "white",
                                 fontSize: 4 + "em",
                                 marginTop: -25,
                               }}
@@ -199,8 +199,8 @@ function StatusDashboard(props) {
                                 value={statusDetails.blocked}
                                 text={`${statusDetails.blocked}%`}
                                 styles={buildStyles({
-                                  textColor: "#FF0000",
-                                  pathColor: "#FF0000",
+                                  textColor: "white",
+                                  pathColor: "blue",
                                 })}
                               />
                             </div>

@@ -8,6 +8,7 @@ import useTicketUpdate from "../hooks/useTicketUpdate";
 import useUsersUpdate from "../hooks/useUserUpdate";
 import TicketsUpdateModal from "../components/TicketsUpdateModal/TicketUpdateModal";
 import TicketsTable from "../components/Ticketstable/ticketsTable";
+
 const Admin = () => {
   //creating status
   const [ticketDetails, fetchTickets] = useFetchTickets();
@@ -45,6 +46,7 @@ const Admin = () => {
               maxWidth: "100%",
             }}
           >
+          
             <MaterialTable
               style={{
                 color: "black",
@@ -62,9 +64,9 @@ const Admin = () => {
               onRowClick={(event, rowData) => editUser(rowData)}
               title="USER RECORDS"
               options={{
-                filtering: true,
                 sorting: true,
                 exportButton: true,
+               Action:true,
                 headerStyle: {
                   backgroundColor: "mediumblue",
                   fontSize: "1.2em",
@@ -78,6 +80,7 @@ const Admin = () => {
               }}
               data={userDetails}
             />
+            
             <Modal
               show={usersUpdateModal}
               onHide={closeUsersUpdateModal}
@@ -88,12 +91,12 @@ const Admin = () => {
                 fontFamily: "Lobster, cursive",
               }}
             >
-              <Modal.Header closeButton style={{ backgroundColor: "yellow" }}>
+              <Modal.Header closeButton style={{ backgroundColor: "	blueviolet" }}>
                 <Modal.Title style={{ color: "#000", fontSize: "2rem" }}>
                   Edit Users Details...
                 </Modal.Title>
               </Modal.Header>
-              <Modal.Body style={{ backgroundColor: "yellow" }}>
+              <Modal.Body>
                 <form onSubmit={updateUserFn}>
                   <div className="p-1">
                     <h4 className="card-subtitle mb-2 text-dark">

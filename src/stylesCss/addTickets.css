@@ -1,0 +1,25 @@
+.button1{
+    padding: 17px 40px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(255, 56, 86);
+    letter-spacing: 1.5px;
+    font-size: 20px;
+    transition: all .3s ease;
+    box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+    color: hsl(0, 0%, 100%);
+    margin-right: 2 rem;
+   
+   }
+   
+   .button1:hover {
+    box-shadow:rgb(201, 46, 70) 0px 10px 0px 0px;
+   }
+   
+   .button1:active {
+    background-color: rgb(64, 224, 15);
+    /*50, 168, 80*/
+    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+   }
