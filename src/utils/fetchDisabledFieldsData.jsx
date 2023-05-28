@@ -21,6 +21,7 @@ const fetchDisabledFields=()=>{
 
   if(userType===constants.userTypes.customer){
         disabledFields.assignee=true;
+        disabledFields.status=true;
     }    
   
 

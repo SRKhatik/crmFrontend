@@ -17,7 +17,7 @@ function UnAuthorised(props){
             justifyContent:"center",
             alignItems:"center",
             fontSize:"1.3em"
-          }}> <i class="bi bi-exclamation-octagon-fill"></i> OOPS! User of  { props.userType }  type doesn't have sufficient permissons to access this page. </div>
+          }}> <i className="bi bi-exclamation-octagon-fill"></i> OOPS! User of  { props.userType }  type doesn't have sufficient permissons to access this page. </div>
         <button className="bttn mt-4" onClick={logout}> Login as another Role  </button> 
     </div>
 

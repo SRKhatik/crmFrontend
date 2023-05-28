@@ -17,7 +17,7 @@ function UnAuthenticated() {
       }}> <i class="bi bi-exclamation-octagon-fill"></i>
           You need to be a logged in to access this page.
         </div>
-        <button className="bttn mt-4" to="/"> Move to Login Page  </button> 
+        <Link className="bttn mt-4" to="/"> Move to Login Page  </Link> 
       </div>
     
   );

@@ -6,22 +6,21 @@ import UnAuthenticated from "../components/UnAthenticated/UnAuthenticated";
 function Auth(props) {
   const location = useLocation();
   const userType = localStorage.getItem("userType");
-
   if (!userType) {
     return <UnAuthenticated />;
   }
   const page = location.pathname.slice(1);
-
+  console.log(page);
   var requiredUserType = null;
 
   if (page === "ADMIN") {
     requiredUserType = constants.userTypes.admin;
-  } else if (page === "CUSTOMER") {
+  } else if (page == "CUSTOMER") {
     requiredUserType = constants.userTypes.customer;
   } else if (page === "ENGINEER") {
     requiredUserType = constants.userTypes.engineer;
   }
-
+  console.log(userType, requiredUserType);
   if (userType !== requiredUserType) {
     return <UnAuthorised userType={userType} />;
   }

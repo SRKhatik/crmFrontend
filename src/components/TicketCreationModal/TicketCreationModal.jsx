@@ -1,19 +1,34 @@
 import { Modal, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { createNewTicket } from "../../api/ticket";
 
 function TicketCreationModal(props) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [priority, setPriority] = useState("");
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
+
+  const handlePriorityChange = (event) => {
+    setPriority(event.target.value);
+  };
+
   const createTicket = (e) => {
     e.preventDefault();
 
-    const title = e.target.title.value;
-    const description = e.target.description.value;
-    const priority = e.target.priority.value;
-
     const ticket = { title, description, priority };
 
-    createTicket(ticket)
+    createNewTicket(ticket)
       .then((res) => {
         if (res.status === 201) {
-          window.location.href = "/customer";
+          //window.location.href = "/customer";
+          props.onClose();
         }
       })
       .catch((err) => {
@@ -27,7 +42,7 @@ function TicketCreationModal(props) {
         <Modal.Title>Create Ticket</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <from>
+        <form onSubmit={createTicket}>
           <div className="input-group mb-3">
             <span
               className="input-group-text "
@@ -37,12 +52,18 @@ function TicketCreationModal(props) {
                 color: "gold",
                 fontSize: "20px",
                 borderColor: "lime",
-                name: "title",
               }}
             >
               Title
             </span>
-            <input type="text" className="form-control" name="title" required />
+            <input
+              type="text"
+              className="form-control"
+              name="title"
+              value={title}
+              onChange={handleTitleChange}
+              required
+            />
           </div>
           <div className="input-group mb-3">
             <span
@@ -57,12 +78,16 @@ function TicketCreationModal(props) {
             >
               Priority
             </span>
-            <select className="form-select">
-              <option vlaue="1">One</option>
-              <option vlaue="2">Two</option>
-              <option vlaue="3">Three</option>
-              <option vlaue="4">Four</option>
-              <option vlaue="5">Five</option>
+            <select
+              className="form-select"
+              value={priority}
+              onChange={handlePriorityChange}
+            >
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+              <option value="4">Four</option>
+              <option value="5">Five</option>
             </select>
           </div>
           <div className="input-group mb-3">
@@ -71,9 +96,9 @@ function TicketCreationModal(props) {
               className="md-textarea form-control text-primary"
               name="description"
               rows="5"
-            >
-              DESCRIPTION :-
-            </textarea>
+              value={description}
+              onChange={handleDescriptionChange}
+            />
           </div>
           <div className="buttonContainer">
             <Button className="button" onClick={props.onClose}>
@@ -83,9 +108,10 @@ function TicketCreationModal(props) {
               CREATE
             </Button>
           </div>
-        </from>
+        </form>
       </Modal.Body>
     </Modal>
   );
 }
+
 export default TicketCreationModal;
