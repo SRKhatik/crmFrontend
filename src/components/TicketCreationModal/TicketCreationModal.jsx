@@ -1,5 +1,5 @@
-import { Modal, Button } from "react-bootstrap";
 import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 import { createNewTicket } from "../../api/ticket";
 
 function TicketCreationModal(props) {

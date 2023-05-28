@@ -1,3 +1,4 @@
+import React from "react";
 import Sidebar from "../components/Sidebar";
 import StatusDashboard from "../components/StatusDashboard/StatusDashboard";
 import useFetchTickets from "../hooks/useFetchTicket";

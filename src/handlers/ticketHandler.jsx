@@ -1,3 +1,4 @@
+import React from "react";
 export const createTicketsCount = (tickets) => {
   const data = {
     pending: 0,

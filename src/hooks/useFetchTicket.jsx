@@ -1,4 +1,4 @@
-
+import React from "react";
 import {getAllTickets} from "../api/ticket"
 import {useState, useEffect} from "react";
 
