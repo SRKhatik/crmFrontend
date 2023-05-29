@@ -2,14 +2,14 @@
     display: inline-block;
     padding: 12px 28px;
     margin: 10px;
+    color: red;
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #e6e9d7;
-    background-image: linear-gradient(to bottom right, #3066c9, #a00fb3);
+    background-image: linear-gradient(to bottom right, #1a1b1b,rgb(16, 26, 26));
     border: none;
     border-radius: 30px;
-    box-shadow: 0px 2px 0px #da1075;
+    box-shadow: 0px 2px 0px #08b86e;
     transition: all 0.2s ease-in-out;
     
   }

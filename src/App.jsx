@@ -20,8 +20,6 @@ function App() {
           <Route path="/customer" element={ <Auth> <Customer/> </Auth> } />
           <Route path='/engineer' element= { <Auth> <Engineer/>  </Auth> } />
           <Route path='/admin' element={ <Auth> <Admin/> </Auth>} />
-          <Route path='/admin' element={ <Auth> <Admin/> </Auth>} />
-          <Route path='/admin' element={ <Auth> <Admin/> </Auth>} />
         </Routes>
         </Router>
       </ThemeProvider>

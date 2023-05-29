@@ -17,14 +17,14 @@ function StatusDashboard(props) {
                 <h1
                   className="text-center"
                   style={{
-                    color: "white",
+                    color: "cyan",
                     marginTop:"-25px"
                   }}
                 >
-                  Welcome, <span style={{color:"deepskyblue"}}>{userName}</span>
+                  Welcome, <span style={{color:"cyan"}}>{userName}</span>
                 </h1>
                 <h5 className="text-white">
-                  Take a quick at your {userType} stats below.
+                  Take a quick to your {userType} stats below.
                 </h5>
                 <div className="row ">
                   <div className="col-xs-12 col-lg-3 col-md-6 my-2">
@@ -33,7 +33,7 @@ function StatusDashboard(props) {
                       style={{
                         boxShadow: "(0 0 10px)",
                         borderColor: "#fff",
-                        borderBottom: "7px solid 	blueviolet",
+                        borderBottom: "7px solid 	cyan",
                         background: "rgba(0,0, 0, 0.4)",
                         backdropFilter: "blur(3px)",
                       }}
@@ -78,7 +78,7 @@ function StatusDashboard(props) {
                       style={{
                         boxShadow: "0 0 10px )",
                         borderColor: "white",
-                        borderBottom: "7px solid 		blueviolet",
+                        borderBottom: "7px solid cyan",
                         background: "rgba(0, 0, 0, 0.4)",
                         backdropFilter: "blur(3px)",
                       }}
@@ -123,7 +123,7 @@ function StatusDashboard(props) {
                       style={{
                         boxShadow: "0 0 10px )",
                         borderColor: "white",
-                        borderBottom: "7px solid 	blueviolet",
+                        borderBottom: "7px solid cyan",
                         background: "rgba(0, 0, 0, 0.4)",
                         backdropFilter: "blur(3px)",
                       }}
@@ -170,7 +170,7 @@ function StatusDashboard(props) {
                       style={{
                         boxShadow: "0 0 10px )",
                         borderColor: "white",
-                        borderBottom: "7px solid 		blueviolet",
+                        borderBottom: "7px solid cyan",
                         background: "rgba(0, 0, 0, 0.4)",
                         backdropFilter: "blur(3px)",
                       }}

@@ -27,7 +27,7 @@ function TicketsUpdateModal(props) {
     >
       <Modal.Header
         closeButton
-        style={{ backgroundColor: "	blueviolet" }}
+        style={{ backgroundColor: "cyan" }}
       >
         <Modal.Title style={{ color: "#000", fontSize: "2rem" }}>
           Edit Tickets Details...
@@ -44,10 +44,9 @@ function TicketsUpdateModal(props) {
                 className="input-group-text "
                 style={{
                   minWidth: "92px",
-                  backgroundColor: "darkslategray",
-                  color: "gold",
+                  backgroundColor: "cyan",
+                  color: "#000",
                   fontSize: "20px",
-                  borderColor: "lime",
                 }}
               >
                 Title
@@ -67,10 +66,9 @@ function TicketsUpdateModal(props) {
                 className="input-group-text"
                 style={{
                   minWidth: "90px",
-                  backgroundColor: "darkslategray",
-                  color: "gold",
+                  backgroundColor: "cyan",
+                  color: "#000",
                   fontSize: "18px",
-                  borderColor: "lime",
                 }}
               >
                 Assignee
@@ -89,10 +87,9 @@ function TicketsUpdateModal(props) {
                 className="input-group-text"
                 style={{
                   minWidth: "92px",
-                  backgroundColor: "darkslategray",
-                  color: "gold",
+                  backgroundColor: "cyan",
+                  color: "#000",
                   fontSize: "18px",
-                  borderColor: "lime",
                 }}
               >
                 Status
@@ -111,10 +108,9 @@ function TicketsUpdateModal(props) {
                 className="input-group-text "
                 style={{
                   minWidth: "92px",
-                  backgroundColor: "darkslategray",
-                  color: "gold",
+                  backgroundColor: "cyan",
+                  color: "#000",
                   fontSize: "18px",
-                  borderColor: "lime",
                 }}
               >
                 Priority
@@ -132,12 +128,15 @@ function TicketsUpdateModal(props) {
               <textarea
                 disabled={disabledFields.description}
                 type="text"
-                className="md-textarea form-control text-primary"
+                className="md-textarea form-control text-dark"
                 name="description"
                 rows="3"
                 value={selectedCurrTicket.description}
                 onChange={onTicketUpdate}
+                placeholder="Description :-"
               />
+              
+              
             </div>
           </div>
           <div className="buttonContainer">

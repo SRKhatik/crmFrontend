@@ -51,7 +51,7 @@ const Admin = () => {
             <MaterialTable
               style={{
                 color: "black",
-                background: "gainsboro",
+                background: "white",
                 borderWidth: "1px",
                 fontFamily: "Lobster, cursive",
               }}
@@ -66,13 +66,12 @@ const Admin = () => {
               title="USER RECORDS"
               options={{
                 sorting: true,
-                exportButton: true,
                Action:true,
                 headerStyle: {
-                  backgroundColor: "mediumblue",
+                  backgroundColor: "cyan",
                   fontSize: "1.2em",
                   alignItems: "center",
-                  color: "white",
+                  color: "black",
                 },
                 rowStyle: {
                   border: "2px solid gray",
@@ -92,7 +91,7 @@ const Admin = () => {
                 fontFamily: "Lobster, cursive",
               }}
             >
-              <Modal.Header closeButton style={{ backgroundColor: "	blueviolet" }}>
+              <Modal.Header closeButton style={{ backgroundColor: "cyan" }}>
                 <Modal.Title style={{ color: "#000", fontSize: "2rem" }}>
                   Edit Users Details...
                 </Modal.Title>
@@ -111,10 +110,10 @@ const Admin = () => {
                         className="input-group-text "
                         style={{
                           minWidth: "92px",
-                          backgroundColor: "darkslategray",
-                          color: "gold",
+                          backgroundColor: "cyan",
+                          color: "black",
                           fontSize: "20px",
-                          borderColor: "lime",
+                         
                         }}
                       >
                         Name
@@ -131,10 +130,10 @@ const Admin = () => {
                         className="input-group-text"
                         style={{
                           minWidth: "90px",
-                          backgroundColor: "darkslategray",
-                          color: "gold",
-                          fontSize: "18px",
-                          borderColor: "lime",
+                          backgroundColor: "cyan",
+                          color: "black",
+                          fontSize: "20px",
+                         
                         }}
                       >
                         E-mail
@@ -152,10 +151,10 @@ const Admin = () => {
                         className="input-group-text"
                         style={{
                           minWidth: "92px",
-                          backgroundColor: "darkslategray",
-                          color: "gold",
-                          fontSize: "18px",
-                          borderColor: "lime",
+                          backgroundColor: "cyan",
+                          color: "black",
+                          fontSize: "20px",
+                         
                         }}
                       >
                         Status

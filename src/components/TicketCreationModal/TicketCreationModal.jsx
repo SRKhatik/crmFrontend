@@ -48,10 +48,9 @@ function TicketCreationModal(props) {
               className="input-group-text "
               style={{
                 minWidth: "92px",
-                backgroundColor: "darkslategray",
-                color: "gold",
+                backgroundColor: "cyan",
+                color: "black",
                 fontSize: "20px",
-                borderColor: "lime",
               }}
             >
               Title
@@ -70,10 +69,10 @@ function TicketCreationModal(props) {
               className="input-group-text "
               style={{
                 minWidth: "92px",
-                backgroundColor: "darkslategray",
-                color: "gold",
-                fontSize: "18px",
-                borderColor: "lime",
+                backgroundColor: "cyan",
+                color: "black",
+                fontSize: "20px",
+            
               }}
             >
               Priority

@@ -47,7 +47,7 @@ const Sidebar = () => {
             />
             <div
               className="text-decoration-none"
-              style={{ color: "black", background: "aqua" }}
+              style={{color:"cyan"}}
             >
               CRM APP
             </div>
