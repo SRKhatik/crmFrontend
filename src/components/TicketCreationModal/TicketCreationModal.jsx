@@ -38,7 +38,10 @@ function TicketCreationModal(props) {
 
   return (
     <Modal show={props.show} onHide={props.onClose}>
-      <Modal.Header closeButton>
+      <Modal.Header
+        closeButton
+        style={{ backgroundColor: "cyan" }}
+      >
         <Modal.Title>Create Ticket</Modal.Title>
       </Modal.Header>
       <Modal.Body>

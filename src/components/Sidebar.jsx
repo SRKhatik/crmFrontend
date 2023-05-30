@@ -47,35 +47,35 @@ const Sidebar = () => {
             />
             <div
               className="text-decoration-none"
-              style={{color:"cyan"}}
+              style={{color:"black",background:"#fff"}}
             >
               CRM APP
             </div>
           </CNavItem>
           <CNavItem href="#">
             <i className="bi bi-bar-chart-fill text-white m-2 ps-0" />
-            <div className="text-decoration-none text-info mx-3">Chart</div>
+            <div className="text-decoration-none text-white mx-3">Chart</div>
           </CNavItem>
 
           <CNavItem href="#">
             <i className="bi bi-house text-white m-2 ps-0" />
-            <div className="text-decoration-none text-info mx-3">Home</div>
+            <div className="text-decoration-none text-white   mx-3">Home</div>
           </CNavItem>
 
           <CNavItem href="#">
             <i className="bi bi-ticket-perforated-fill text-white m-2 ps-0" />
-            <div className="text-decoration-none text-info mx-3">Tickets</div>
+            <div className="text-decoration-none text-white  mx-3">Tickets</div>
           </CNavItem>
           
           <CNavItem href="#" onClick={toggleTable}>
             <i className="bi bi-person-bounding-box text-white m-2 ps-0" />
-            <div className="text-decoration-none text-info mx-3">Users</div>
+            <div className="text-decoration-none text-white  mx-3">Users</div>
           </CNavItem>
 
           <div onClick={logout}>
             <CNavItem href="#">
               <i className="bi bi-box-arrow-left text-white m-2 ps-0" />
-              <div className="text-decoration-none text-info mx-3">Logout</div>
+              <div className="text-decoration-none text-white  mx-3">Logout</div>
             </CNavItem>
           </div>
         </CSidebarNav>

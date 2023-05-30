@@ -35,10 +35,10 @@ function Customer() {
 
           <div>
             <input
-              className="button1 m-4  text-white"
+              className="button1 mb-4  text-white"
               onClick={openCreateTicketModal}
               type="submit"
-              value="ADD TICKET"
+              value="ADD TICKET +"
             />
 
             <TicketCreationModal

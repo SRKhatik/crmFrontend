@@ -18,7 +18,7 @@ function StatusDashboard(props) {
                   className="text-center"
                   style={{
                     color: "cyan",
-                    marginTop:"-25px"
+                    marginTop:"-15px"
                   }}
                 >
                   Welcome, <span style={{color:"cyan"}}>{userName}</span>
@@ -32,23 +32,22 @@ function StatusDashboard(props) {
                       className="card"
                       style={{
                         boxShadow: "(0 0 10px)",
-                        borderColor: "#fff",
-                        borderBottom: "7px solid 	cyan",
-                        background: "rgba(0,0, 0, 0.4)",
+                        background: "linear-gradient(180deg,  #FDD819 30%, #E80505 100%)",
                         backdropFilter: "blur(3px)",
+                       
                       }}
                     >
-                      <div className="card-body text-white">
-                        <h4 style={{ color: "white" }}>
-                          <i className="text-primary bu bi-pencil mx-2"></i>
+                      <div className="card-body text-BLACK">
+                        <h4 style={{ color: "black" }}>
+                          <i className="text-BLACK bu bi-pencil mx-2"></i>
                           OPEN
                         </h4>
-                        <hr style={{ borderWidth: "4px", color: "white" }} />
+                        <hr style={{ borderWidth: "4px", color: "black" }} />
                         <div className="row">
                           <div className="col">
                             <div
                               style={{
-                                color: "white",
+                                color: "WHITE",
                                 fontSize: 4 + "em",
                                 marginTop: -25,
                               }}
@@ -76,19 +75,17 @@ function StatusDashboard(props) {
                     <div
                       className="card shadow shadow-white "
                       style={{
-                        boxShadow: "0 0 10px )",
-                        borderColor: "white",
-                        borderBottom: "7px solid cyan",
-                        background: "rgba(0, 0, 0, 0.4)",
+                        boxShadow: "0 0 10px",
+                        background: "linear-gradient( 180deg, #F5CBFF 20%, #C346C2 100%)",
                         backdropFilter: "blur(3px)",
                       }}
                     >
                       <div className="card-body text-white">
-                        <h4 style={{ color: "white" }}>
-                          <i className="text-warning  bi bi-lightning-charge mx-2"></i>
+                        <h4 style={{ color: "BLACK" }}>
+                          <i className="text-BLACK bi bi-lightning-charge mx-2"></i>
                           PROGRESS
                         </h4>
-                        <hr style={{ borderWidth: "4px", color: "white" }} />
+                        <hr style={{ borderWidth: "4px", color: "BLACK" }} />
                         <div className="row">
                           <div className="col">
                             <div
@@ -121,19 +118,17 @@ function StatusDashboard(props) {
                     <div
                       className="card shadow shadow-white "
                       style={{
-                        boxShadow: "0 0 10px )",
-                        borderColor: "white",
-                        borderBottom: "7px solid cyan",
-                        background: "rgba(0, 0, 0, 0.4)",
+                        boxShadow: "0 0 10px",
+                        background: "linear-gradient(0deg, #3CD500 30%, #92FE9D 60%)",
                         backdropFilter: "blur(3px)",
                       }}
                     >
                       <div className="card-body text-white">
-                        <h4 style={{ color: "white" }}>
-                          <i className="text-success bi bi-check-circle mx-2"></i>
+                        <h4 style={{ color: "BLACK" }}>
+                          <i className="text-DARK bi bi-check-circle mx-2"></i>
                           CLOSED
                         </h4>
-                        <hr style={{ borderWidth: "4px", color: "white" }} />
+                        <hr style={{ borderWidth: "4px", color: "BLACK" }} />
                         <div className="row">
                           <div className="col">
                             <div
@@ -168,19 +163,17 @@ function StatusDashboard(props) {
                     <div
                       className="card shadow shadow-white "
                       style={{
-                        boxShadow: "0 0 10px )",
-                        borderColor: "white",
-                        borderBottom: "7px solid cyan",
-                        background: "rgba(0, 0, 0, 0.4)",
+                        boxShadow: "0 0 10px ",
+                        background: "linear-gradient(180deg, #00EAFF 30%, #1904E5 100%)",
                         backdropFilter: "blur(3px)",
                       }}
                     >
                       <div className="card-body text-white">
-                        <h4 style={{ color: "	white" }}>
-                          <i className=" text-danger bi bi-slash-circle mx-2"></i>
+                        <h4 style={{ color: "BLACK" }}>
+                          <i className=" text-DARK bi bi-slash-circle mx-2"></i>
                           BLOCKED
                         </h4>
-                        <hr style={{ borderWidth: "4px", color: "white" }} />
+                        <hr style={{ borderWidth: "4px", color: "BLACK" }} />
                         <div className="row">
                           <div className="col">
                             <div

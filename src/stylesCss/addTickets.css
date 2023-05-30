@@ -1,25 +1,27 @@
-.button1{
+.button1 {
     padding: 17px 40px;
-    border-radius: 10px;
+    border-radius: 50px;
     border: 0;
-    background-color:#447cff;
+    background-color: rgb(29, 21, 28);
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
     letter-spacing: 1.5px;
-    font-size: 20px;
-    transition: all .3s ease;
-    box-shadow: rgb(141, 244, 252) 0px 6px 6px 0px;
-    color: hsl(0, 0%, 100%);
-    margin-right: 2 rem;
-   
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all .5s ease;
    }
    
    .button1:hover {
-    box-shadow:rgb(243, 6, 243) 0px 6px 6px 0px;
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
    }
    
    .button1:active {
-    background-color: rgb(94, 231, 53);
-    /*50, 168, 80*/
-    box-shadow: rgb(94, 231, 53) 0px 0px 0px 0px;
-    transform: translateY(5px);
-    transition: 200ms;
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
    }

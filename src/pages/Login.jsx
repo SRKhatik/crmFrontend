@@ -151,7 +151,7 @@ function Login() {
     >
       <div>
         <h1 style={{ color: "#fff", margin: "20px",fontSize:"3rem"}}>
-          <span style={{color:"aqua"}}>CRM APPLICATION</span>
+          <span style={{color:"black"}}>CRM APPLICATION</span>
         </h1>
         <div
           style={{
