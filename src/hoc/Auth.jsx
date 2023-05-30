@@ -10,13 +10,12 @@ function Auth(props) {
   if (!userType) {
     return <UnAuthenticated />;
   }
-  const page = location.pathname.slice(1);
-  console.log(page);
+  const page = location.pathname.split("/")[1];
   var requiredUserType = null;
-
+   console.log(page)
   if (page === "ADMIN") {
     requiredUserType = constants.userTypes.admin;
-  } else if (page == "CUSTOMER") {
+  } else if (page.toUpperCase() == "CUSTOMER") {
     requiredUserType = constants.userTypes.customer;
   } else if (page === "ENGINEER") {
     requiredUserType = constants.userTypes.engineer;

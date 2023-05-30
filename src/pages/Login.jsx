@@ -142,7 +142,6 @@ function Login() {
   return (
     <div
       style={{
-        backgroundImage: "url('img/3.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -151,7 +150,7 @@ function Login() {
     >
       <div>
         <h1 style={{ color: "#fff", margin: "20px",fontSize:"3rem"}}>
-          <span style={{color:"black"}}>CRM APPLICATION</span>
+          <span style={{color:"yellow"}}>CRM APPLICATION</span>
         </h1>
         <div
           style={{
@@ -255,7 +254,7 @@ function Login() {
               <span
                 style={{ color: "white", textDecoration: "underline" }}
                 onMouseEnter={(e) => {
-                  e.target.style.color = "#FF00FF";
+                  e.target.style.color = "blue";
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.color = "white";

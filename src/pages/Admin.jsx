@@ -9,11 +9,34 @@ import useTicketUpdate from "../hooks/useTicketUpdate";
 import useUsersUpdate from "../hooks/useUserUpdate";
 import TicketsUpdateModal from "../components/TicketsUpdateModal/TicketUpdateModal";
 import TicketsTable from "../components/Ticketstable/ticketsTable";
+import constants from "../utils/constants";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Admin = () => {
+  const location = useLocation();
+  const [userDetails, fetchUsers] = useFetchUsers();
+
+  useEffect(() => {
+    const pathName = location.pathname;
+    const userId = pathName.split("/")[2];
+
+    if (!userId) {
+      return;
+    }
+
+    const user = userDetails.find((user) => user.userId === userId);
+
+    if (!user) {
+      return;
+    }
+
+    setUserAndOpenModal(user);
+  }, [userDetails]);
+
   //creating status
   const [ticketDetails, fetchTickets] = useFetchTickets();
-  const [userDetails, fetchUsers] = useFetchUsers();
+
   const {
     selectedCurrTicket,
     ticketUpdateModal,
@@ -25,16 +48,17 @@ const Admin = () => {
   const {
     usersUpdateModal,
     selectedCurrUser,
+    setUserAndOpenModal,
     closeUsersUpdateModal,
     editUser,
     changeUserDetails,
     updateUserFn,
-  } = useUsersUpdate(fetchUsers);
+  } = useUsersUpdate();
 
   return (
     <div className="row d-flex vh-100%">
       <div className="col-1">
-            <Sidebar /> 
+      <Link to="/admin/shubham"> <Sidebar/> </Link>
       </div>
       <div className="col my-4">
         <div className="container">
@@ -47,7 +71,6 @@ const Admin = () => {
               maxWidth: "100%",
             }}
           >
-          
             <MaterialTable
               style={{
                 color: "black",
@@ -66,7 +89,7 @@ const Admin = () => {
               title="USER RECORDS"
               options={{
                 sorting: true,
-               Action:true,
+                Action: true,
                 headerStyle: {
                   backgroundColor: "cyan",
                   fontSize: "1.2em",
@@ -80,7 +103,7 @@ const Admin = () => {
               }}
               data={userDetails}
             />
-            
+
             <Modal
               show={usersUpdateModal}
               onHide={closeUsersUpdateModal}
@@ -113,7 +136,6 @@ const Admin = () => {
                           backgroundColor: "cyan",
                           color: "black",
                           fontSize: "20px",
-                         
                         }}
                       >
                         Name
@@ -133,7 +155,6 @@ const Admin = () => {
                           backgroundColor: "cyan",
                           color: "black",
                           fontSize: "20px",
-                         
                         }}
                       >
                         E-mail
@@ -154,7 +175,6 @@ const Admin = () => {
                           backgroundColor: "cyan",
                           color: "black",
                           fontSize: "20px",
-                         
                         }}
                       >
                         Status

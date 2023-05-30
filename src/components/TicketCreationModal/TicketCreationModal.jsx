@@ -5,7 +5,7 @@ import { createNewTicket } from "../../api/ticket";
 function TicketCreationModal(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("");
+  const [priority, setPriority] = useState("1");
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -22,8 +22,8 @@ function TicketCreationModal(props) {
   const createTicket = (e) => {
     e.preventDefault();
 
-    const ticket = { title, description, priority };
-
+    const ticket = { title, ticketPriority: priority, description };
+    console.log(priority);
     createNewTicket(ticket)
       .then((res) => {
         if (res.status === 201) {
@@ -38,10 +38,7 @@ function TicketCreationModal(props) {
 
   return (
     <Modal show={props.show} onHide={props.onClose}>
-      <Modal.Header
-        closeButton
-        style={{ backgroundColor: "cyan" }}
-      >
+      <Modal.Header closeButton style={{ backgroundColor: "cyan" }}>
         <Modal.Title>Create Ticket</Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -75,7 +72,6 @@ function TicketCreationModal(props) {
                 backgroundColor: "cyan",
                 color: "black",
                 fontSize: "20px",
-            
               }}
             >
               Priority

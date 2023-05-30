@@ -1,8 +1,8 @@
 .App {
   text-align: center;
   font-family: "Lobster", cursive;
-  /* background-color:#C0C0C0; */
-  background: linear-gradient(to bottom,#375048, #06d8f8, #2c3e50); 
+  background-color:#272525ec; 
+  /* background: linear-gradient(to bottom,#375048, #06d8f8, #2c3e50);  */
   background-size: cover;
   background-position: center;
   overflow: hidden;
