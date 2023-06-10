@@ -2,13 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import { FaUserFriends, FaUserAlt, FaUserTie } from "react-icons/all.js";
 import { userSignIn, userSignUp } from "../api/auth";
 
 
 function Login() {
   const [showSignup, setShowSignup] = useState(true);
-
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
@@ -23,11 +21,10 @@ function Login() {
     const userType = localStorage.getItem("userType");
     const token = localStorage.getItem("token");
 
+
     if (!token || !userType) {
       return;
     }
-    console.log(userType);
-    console.log(token);
 
     window.location.href = `/${userType}`;
   }, []);
@@ -146,22 +143,32 @@ function Login() {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="d-flex justify-content-center align-items-center vh-100"
+      className="d-flex bg-secondary justify-content-center align-items-center vh-100"
     >
       <div>
-        <h1 style={{ color: "#fff", margin: "20px",fontSize:"3rem"}}>
-          <span style={{color:"yellow"}}>CRM APPLICATION</span>
+        <h1 style={{ color: "#fff", margin: "20px", fontSize: "3rem" }}>
+          <span
+            style={{
+              color: "black",
+              fontFamily: "Lobster, cursive",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            CRM APPLICATION
+          </span>
         </h1>
         <div
           style={{
-            background: "rgba(0, 0, 0, 0.3)",
+            background: "rgba(0, 0, 0, 0.8)",
             Shadow: "0 0 40px 20px #fff",
             backdropFilter: "blur(3px)",
             borderWidth: "1px",
             borderColor: "rgb(33, 232, 254)",
-            width: 30 + "rem",
+            // width:  30 + "rem",
           }}
-          className="card p-3 rounded-4 shadow-lg"
+          className="card p-3  rounded-4 shadow-lg"
         >
           <h2 className="text-center text-white">
             {showSignup ? "SIGN UP" : "LOG IN"}
@@ -216,20 +223,33 @@ function Login() {
               {showSignup && (
                 <DropdownButton
                   title={userType}
-                  id="userId"
+                  id="userId1"
                   variant="light"
-                  align="mid"
                   onSelect={userTypeChange}
                 >
                   <Dropdown.Item eventKey="CUSTOMER">
-                    <FaUserFriends size={18} style={{ color: "black" }} />
+                    <i
+                      className="bi bi-people-fill"
+                      size={18}
+                      style={{ color: "black" }}
+                    />
                     Customer
                   </Dropdown.Item>
                   <Dropdown.Item eventKey="ENGINEER">
-                    <FaUserTie size={15} style={{ color: "black" }} /> Engineer
+                    <i
+                      className="bi bi-person-fill-check"
+                      size={15}
+                      style={{ color: "black" }}
+                    />{" "}
+                    Engineer
                   </Dropdown.Item>
                   <Dropdown.Item eventKey="ADMIN">
-                    <FaUserAlt size={14} style={{ color: "black" }} /> Admin
+                    <i
+                      className="bi bi-person-fill"
+                      size={14}
+                      style={{ color: "black" }}
+                    />{" "}
+                    Admin
                   </Dropdown.Item>
                 </DropdownButton>
               )}

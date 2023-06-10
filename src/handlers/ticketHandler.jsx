@@ -1,4 +1,5 @@
 import React from "react";
+
 export const createTicketsCount = (tickets) => {
   const data = {
     pending: 0,
@@ -6,14 +7,15 @@ export const createTicketsCount = (tickets) => {
     progress: 0,
     blocked: 0,
   };
-
-  tickets.forEach((ticket) => {
-    const status = ticket.status.toUpperCase();
-    if (status === "OPEN") data.pending += 1;
-    else if (status === "PROGRESS") data.progress += 1;
-    else if (status === "BLOCKED") data.blocked += 1;
-    else data.closed += 1;
-  });
+  if (Array.isArray(tickets)) {
+    tickets.forEach((ticket) => {
+      const status = ticket.status.toUpperCase();
+      if (status === "OPEN") data.pending += 1;
+      else if (status === "PROGRESS") data.progress += 1;
+      else if (status === "BLOCKED") data.blocked += 1;
+      else data.closed += 1;
+    });
+  }
 
   return data;
 };

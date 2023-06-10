@@ -9,13 +9,41 @@ import useTicketUpdate from "../hooks/useTicketUpdate";
 import useUsersUpdate from "../hooks/useUserUpdate";
 import TicketsUpdateModal from "../components/TicketsUpdateModal/TicketUpdateModal";
 import TicketsTable from "../components/Ticketstable/ticketsTable";
-import constants from "../utils/constants";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { deleteUser } from "../api/user";
+import Chartsusers from "../components/Chart/ChartAdmin";
+import Charts from "../components/Chart/Chart";
 
 const Admin = () => {
   const location = useLocation();
   const [userDetails, fetchUsers] = useFetchUsers();
+
+  const DeleteUserId = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.value) {
+        deleteApi(_id);
+      }
+    });
+  };
+  const deleteApi = async (_id) => {
+    deleteUser({ id: _id })
+      .then((res) => {
+        Swal.fire("Deleted!", `User ${_id} has been deleted.`, "success");
+      })
+      .catch((err) => {
+        Swal.fire("ERROR!", `OOPS Something went wrong`, "warning");
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     const pathName = location.pathname;
@@ -24,9 +52,7 @@ const Admin = () => {
     if (!userId) {
       return;
     }
-
     const user = userDetails.find((user) => user.userId === userId);
-
     if (!user) {
       return;
     }
@@ -56,9 +82,9 @@ const Admin = () => {
   } = useUsersUpdate();
 
   return (
-    <div className="row d-flex vh-100%">
+    <div className="row d-flex 100%">
       <div className="col-1">
-      <Link to="/admin/shubham"> <Sidebar/> </Link>
+        <Sidebar />
       </div>
       <div className="col my-4">
         <div className="container">
@@ -67,6 +93,7 @@ const Admin = () => {
 
           {/*material table of users and modal*/}
           <div
+            id="users"
             style={{
               maxWidth: "100%",
             }}
@@ -76,7 +103,6 @@ const Admin = () => {
                 color: "black",
                 background: "white",
                 borderWidth: "1px",
-                fontFamily: "Lobster, cursive",
               }}
               columns={[
                 { title: "USER ID", field: "userId" },
@@ -85,19 +111,29 @@ const Admin = () => {
                 { title: "ROLE", field: "userTypes" },
                 { title: "STATUS", field: "userStatus" },
               ]}
+              actions={[
+                (rowData) => ({
+                  icon: "delete",
+                  tooltip: "Delete User",
+                  onClick: () => {
+                    DeleteUserId(rowData._id);
+                  },
+                }),
+              ]}
               onRowClick={(event, rowData) => editUser(rowData)}
               title="USER RECORDS"
               options={{
                 sorting: true,
-                Action: true,
+                actionsColumnIndex: -1,
+                exportButton: true,
                 headerStyle: {
                   backgroundColor: "cyan",
                   fontSize: "1.2em",
                   alignItems: "center",
                   color: "black",
+                  textTransform: "uppercase",
                 },
                 rowStyle: {
-                  border: "2px solid gray",
                   cursor: "pointer",
                 },
               }}
@@ -219,6 +255,23 @@ const Admin = () => {
               closeTicketUpdateModal={closeTicketUpdateModal}
               updateTicketFn={updateTicketFn}
             />
+            <br />
+
+            <div style={{ display: "flex", alignItems: "stretch" }}>
+              <div style={{ flex: 1, border: "1px solid black", borderRadius: "5px", marginRight: "10px"}}>
+                <Charts
+                  style={{ width: "100%", flexGrow: 1 }}
+                  ticketDetails={ticketDetails}
+                />
+              </div>
+
+              <div style={{flex: 1, border: "1px solid black", borderRadius: "5px", marginRight: "10px" }}>
+                <Chartsusers
+                  style={{ width: "100%", flexGrow: 1 }}
+                  userDetails={userDetails}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

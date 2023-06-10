@@ -18,8 +18,16 @@ const useFetchTickets=()=>{
             console.log(err);
         })
     }
-
-    return [ticketDetails, fetchTickets];
-}
+      return [ticketDetails, fetchTickets];
+    };
 
 export default useFetchTickets;
+
+
+
+
+
+
+
+
+

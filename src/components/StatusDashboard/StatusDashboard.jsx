@@ -2,31 +2,56 @@ import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { createTicketsCount } from "/src/handlers/ticketHandler.jsx";
 import "../../stylesCss/buttons.css";
+import { themeContext } from "../../Context";
+import { useContext } from "react";
+import Toggle from "../Toggle/toggle";
+import LogoutButton from "../Logout/Logout";
+import TodoList from "../Todo/Todo";
+
 
 function StatusDashboard(props) {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   const statusDetails = createTicketsCount(props.ticketDetails);
+  const totalTicktsCount =
+    statusDetails.pending +
+    statusDetails.progress +
+    statusDetails.closed +
+    statusDetails.blocked;
   const userName = localStorage.getItem("name");
   const userType = localStorage.getItem("userType");
 
   return (
     <div className="row d-flex vh-100%">
-      <div className="col my-4">
+      <div className="col my-2">
+        <div className="d-flex justify-content-between">
+          <LogoutButton />
+          <Toggle />
+        </div>
+
         <div className="container">
           <div className="col">
             <div>
               <h1
                 className="text-center"
                 style={{
-                  color: "cyan",
+                  fontFamily: "Lobster, cursive",
+                  color: "#FCA61F",
                   marginTop: "-15px",
                 }}
               >
-                Welcome, <span style={{ color: "cyan" }}>{userName}</span>
+                Welcome, {userName}
               </h1>
-              <h5 className="text-white">
+
+              <h6
+                style={{
+                  background: darkMode ? '"#242D49' : "",
+                  color: darkMode ? "white" : "",
+                }}
+              >
                 Take a quick to your {userType} stats below.
-              </h5>
-              <div className="row ">
+              </h6>
+              <div className="row " style={{ fontFamily: "Lobster, cursive" }}>
                 <div className="col-xs-12 col-lg-3 col-md-6 my-2">
                   <div
                     className="card"
@@ -58,11 +83,15 @@ function StatusDashboard(props) {
                         <div className="col">
                           <div style={{ width: 50, height: 60 }}>
                             <CircularProgressbar
-                              value={statusDetails.pending}
-                              text={`${statusDetails.pending}%`}
+                              value={parseInt(
+                                (statusDetails.pending / totalTicktsCount) * 100
+                              )}
+                              text={`${parseInt(
+                                (statusDetails.pending / totalTicktsCount) * 100
+                              )}%`}
                               styles={buildStyles({
-                                textColor: "white",
-                                pathColor: "blue",
+                                textColor: "black",
+                                pathColor: "black",
                               })}
                             />
                           </div>
@@ -102,11 +131,17 @@ function StatusDashboard(props) {
                         <div className="col">
                           <div style={{ width: 50, height: 60 }}>
                             <CircularProgressbar
-                              value={statusDetails.progress}
-                              text={`${statusDetails.progress}%`}
+                              value={parseInt(
+                                (statusDetails.progress / totalTicktsCount) *
+                                  100
+                              )}
+                              text={`${parseInt(
+                                (statusDetails.progress / totalTicktsCount) *
+                                  100
+                              )}%`}
                               styles={buildStyles({
-                                textColor: "white",
-                                pathColor: "blue",
+                                textColor: "black",
+                                pathColor: "black",
                               })}
                             />
                           </div>
@@ -146,11 +181,15 @@ function StatusDashboard(props) {
                         <div className="col">
                           <div style={{ width: 50, height: 60 }}>
                             <CircularProgressbar
-                              value={statusDetails.closed}
-                              text={`${statusDetails.closed}%`}
+                              value={parseInt(
+                                (statusDetails.closed / totalTicktsCount) * 100
+                              )}
+                              text={`${parseInt(
+                                (statusDetails.closed / totalTicktsCount) * 100
+                              )}%`}
                               styles={buildStyles({
-                                textColor: "white",
-                                pathColor: "blue",
+                                textColor: "black",
+                                pathColor: "black",
                               })}
                             />
                           </div>
@@ -190,11 +229,15 @@ function StatusDashboard(props) {
                         <div className="col">
                           <div style={{ width: 50, height: 60 }}>
                             <CircularProgressbar
-                              value={statusDetails.blocked}
-                              text={`${statusDetails.blocked}%`}
+                              value={parseInt(
+                                (statusDetails.blocked / totalTicktsCount) * 100
+                              )}
+                              text={`${parseInt(
+                                (statusDetails.blocked / totalTicktsCount) * 100
+                              )}%`}
                               styles={buildStyles({
-                                textColor: "white",
-                                pathColor: "blue",
+                                textColor: "black",
+                                pathColor: "black",
                               })}
                             />
                           </div>
@@ -206,6 +249,9 @@ function StatusDashboard(props) {
               </div>
             </div>
           </div>
+        </div>
+        <div>
+        <TodoList/>
         </div>
       </div>
     </div>

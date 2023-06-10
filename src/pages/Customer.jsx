@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import "../stylesCss/addTickets.css";
 import TicketCreationModal from "../components/TicketCreationModal/TicketCreationModal";
 import { useLocation } from "react-router-dom";
+import Charts from "../components/Chart/Chart";
 
 function Customer() {
   const location = useLocation();
@@ -43,8 +44,9 @@ function Customer() {
       <div className="col mt-2">
         <div className="container ">
           <StatusDashboard ticketDetails={ticketDetails} />
-
           <div>
+            <br />
+
             <input
               className="button1 mb-4  text-white"
               onClick={openCreateTicketModal}
@@ -53,6 +55,7 @@ function Customer() {
             />
 
             <TicketCreationModal
+              fetchTickets={fetchTickets}
               show={createTicketModal}
               onClose={closeCreateTicketModal}
             />
@@ -70,6 +73,10 @@ function Customer() {
             closeTicketUpdateModal={closeTicketUpdateModal}
             updateTicketFn={updateTicketFn}
           />
+          <br />
+          <Charts 
+            ticketDetails={ticketDetails}/>
+          <br />
         </div>
       </div>
     </div>

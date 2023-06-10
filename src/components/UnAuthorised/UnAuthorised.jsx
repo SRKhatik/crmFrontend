@@ -7,7 +7,7 @@ function UnAuthorised(props){
         <div className="vh-100 d-flex align-items-center flex-column justify-content-center" >
         
         <div className="card"style={{
-            backgroundColor: "rgba(255, 0, 0,0.3)",
+            backgroundColor: "rgba(255, 0, 0,0.9)",
             backdropFilter: "blur(3px)",
             borderWidth: "1px",
             borderColor: "rgb(33, 232, 254)",

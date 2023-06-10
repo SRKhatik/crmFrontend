@@ -12,13 +12,14 @@ const fetchDisabledFields=()=>{
     }
 
 
-    const userType= localStorage.getItem(constants.userAttributeFields.userType);
+    const userType= localStorage.getItem("userType");
 
     if(userType===constants.userTypes.engineer){
         disabledFields.title=true;
         disabledFields.assignee=true;
         disabledFields.priority=true;
     }
+
 
   if(userType===constants.userTypes.customer){
         disabledFields.assignee=true;

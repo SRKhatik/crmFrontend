@@ -5,6 +5,7 @@ import useFetchTickets from "../hooks/useFetchTicket";
 import useTicketUpdate from "../hooks/useTicketUpdate";
 import TicketsUpdateModal from "../components/TicketsUpdateModal/TicketUpdateModal";
 import TicketsTable from "../components/Ticketstable/ticketsTable";
+import Charts from "../components/Chart/Chart";
 
 
 function Engineer() {
@@ -26,6 +27,8 @@ function Engineer() {
       <div className="col my-4">
         <div className="container">
           <StatusDashboard ticketDetails={ticketDetails} />
+          <br/>
+          
           <TicketsTable
             editTicket={editTicket}
             title={"TICKETS ASSIGNED TO YOU"}
@@ -38,6 +41,10 @@ function Engineer() {
             closeTicketUpdateModal={closeTicketUpdateModal}
             updateTicketFn={updateTicketFn}
           />
+            <br/>
+            <Charts 
+            ticketDetails={ticketDetails}/>
+          <br/>
         </div>
       </div>
     </div>

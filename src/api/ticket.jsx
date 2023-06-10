@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_CRM_BACKEND_URL;
@@ -25,4 +24,13 @@ export async function createNewTicket(ticket) {
       "x-access-token": localStorage.getItem("token"),
     },
   });
+}
+export async function deleteTicket(id) {
+  console.log(id)
+  return axios.delete(`${BASE_URL}/crm/api/v1/deleteTicket/${id}`, {
+    headers: {
+      "x-access-token": localStorage.getItem("token"),
+    },
+  });
+ 
 }

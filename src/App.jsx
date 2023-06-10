@@ -7,12 +7,18 @@ import Engineer from "./pages/Engineer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
 import Auth from "../src/hoc/Auth";
-
+import { themeContext } from "./Context";
+import { useContext } from "react";
 function App() {
   const defaultMaterialTheme = createTheme();
+  const theme = useContext(themeContext)
+  const darkMode = theme.state.darkMode;
 
   return (
-    <div className="App">
+    <div className="App" style={{
+      background : darkMode? 'black':'',
+      color:darkMode? "white":"",
+    }}>
       <ThemeProvider theme={defaultMaterialTheme}>
         <Router>
           <Routes>

@@ -22,12 +22,13 @@ function TicketCreationModal(props) {
   const createTicket = (e) => {
     e.preventDefault();
 
-    const ticket = { title, ticketPriority: priority, description };
+    const ticket = { title, priority, description };
     console.log(priority);
     createNewTicket(ticket)
       .then((res) => {
         if (res.status === 201) {
           //window.location.href = "/customer";
+          props.fetchTickets();
           props.onClose();
         }
       })

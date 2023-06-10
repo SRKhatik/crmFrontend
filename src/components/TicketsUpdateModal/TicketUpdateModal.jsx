@@ -12,7 +12,6 @@ function TicketsUpdateModal(props) {
   } = props;
 
   const disabledFields = fetchDisabledFields();
-
   return (
     <Modal
       show={ticketUpdateModal}
