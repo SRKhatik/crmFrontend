@@ -9,7 +9,17 @@ import logo from "../components/images/logo3.png";
 import { Link } from "react-scroll";
 
 
+
 const Sidebar = () => {
+  const logout = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
+
+  const calendar = () => {
+    localStorage.setItem('redirect', '/calendar');
+    window.location.href = '/calendar';
+  };
   
 
   return (
@@ -44,19 +54,19 @@ const Sidebar = () => {
             <div className="text-decoration-none text-white mx-3">Home</div>
           </CNavItem>
 
+          <Link to="users" spy={true} smooth={true}>
+            <CNavItem href="#">
+              <i className="bi bi-person-bounding-box text-white m-2 ps-0" />
+              <div className="text-decoration-none text-white  mx-3">Users</div>
+            </CNavItem>
+          </Link>
+          
           <Link to="tickets" spy={true} smooth={true}>
             <CNavItem href="#">
               <i className="bi bi-ticket-perforated-fill text-white m-2 ps-0" />
               <div className="text-decoration-none text-white  mx-3">
                 Tickets
               </div>
-            </CNavItem>
-          </Link>
-
-          <Link to="users" spy={true} smooth={true}>
-            <CNavItem href="#">
-              <i className="bi bi-person-bounding-box text-white m-2 ps-0" />
-              <div className="text-decoration-none text-white  mx-3">Users</div>
             </CNavItem>
           </Link>
 
@@ -67,7 +77,21 @@ const Sidebar = () => {
             </CNavItem>
           </Link>
 
-        
+          <div onClick={calendar}>
+            <CNavItem href="#">
+              <i className="bi bi-calendar2-day text-white m-2 ps-0" />
+              <div className="text-decoration-none text-white mx-3">Calendar</div>
+            </CNavItem>
+          </div>
+
+          <div onClick={logout}>
+            <CNavItem href="#">
+              <i className="bi bi-box-arrow-left text-white m-2 ps-0" />
+              <div className="text-decoration-none text-white mx-3 ">
+                Logout
+              </div>
+            </CNavItem>
+          </div>
         </CSidebarNav>
       </CSidebar>
       <CSidebarToggler />

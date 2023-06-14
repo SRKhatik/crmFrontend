@@ -139,6 +139,7 @@ function Login() {
   return (
     <div
       style={{
+        backgroundImage:"url('src/img/6068656.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -149,7 +150,7 @@ function Login() {
         <h1 style={{ color: "#fff", margin: "20px", fontSize: "3rem" }}>
           <span
             style={{
-              color: "black",
+              color: "darkblue",
               fontFamily: "Lobster, cursive",
               display: "flex",
               alignItems: "center",
@@ -161,11 +162,11 @@ function Login() {
         </h1>
         <div
           style={{
-            background: "rgba(0, 0, 0, 0.8)",
+            background: "rgba(0, 0, 0, 0.1)",
             Shadow: "0 0 40px 20px #fff",
             backdropFilter: "blur(3px)",
-            borderWidth: "1px",
-            borderColor: "rgb(33, 232, 254)",
+            borderWidth: "1px 1px 6px 6px",
+          
             // width:  30 + "rem",
           }}
           className="card p-3  rounded-4 shadow-lg"

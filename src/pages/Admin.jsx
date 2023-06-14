@@ -15,6 +15,7 @@ import { deleteUser } from "../api/user";
 import Chartsusers from "../components/Chart/ChartAdmin";
 import Charts from "../components/Chart/Chart";
 
+
 const Admin = () => {
   const location = useLocation();
   const [userDetails, fetchUsers] = useFetchUsers();
@@ -257,17 +258,17 @@ const Admin = () => {
             />
             <br />
 
-            <div style={{ display: "flex", alignItems: "stretch" }}>
-              <div style={{ flex: 1, border: "1px solid black", borderRadius: "5px", marginRight: "10px"}}>
+            <div className="row my-2 ">
+              <div className="col-xs-25 col-lg-6 col-md-10 my-2 ">
                 <Charts
-                  style={{ width: "100%", flexGrow: 1 }}
+                  style={{width:" 100%" , flexGrow: "1"}}
                   ticketDetails={ticketDetails}
                 />
               </div>
 
-              <div style={{flex: 1, border: "1px solid black", borderRadius: "5px", marginRight: "10px" }}>
+              <div className="col-xs-25 col-lg-6 col-md-10 my-2 ">
                 <Chartsusers
-                  style={{ width: "100%", flexGrow: 1 }}
+                   style={{width:" 100%" , flexGrow: "1"}}
                   userDetails={userDetails}
                 />
               </div>

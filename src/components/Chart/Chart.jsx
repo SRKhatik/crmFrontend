@@ -14,7 +14,7 @@ const Charts = (props) => {
     ["BLOCKED", statusDetails.blocked],
   ];
   const options = {
-    title: `${userType}`,
+    title: `${userType} TICKETS DATA`,
     is3D: true,
   };
 

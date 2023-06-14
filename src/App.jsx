@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Customer from "./pages/Customer";
 import Admin from "./pages/Admin";
 import Engineer from "./pages/Engineer";
+import Calendar from "./components/Calendar/Calendar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
 import Auth from "../src/hoc/Auth";
@@ -28,6 +29,7 @@ function App() {
             <Route path="/engineer" element={<Auth> <Engineer /></Auth>}/>
             <Route path="/admin"element={<Auth> <Admin /></Auth>}/>
             <Route path="/admin/:userId"element={<Auth> <Admin /></Auth>}/>
+            <Route path="/calendar"element={<Calendar />}/>
           </Routes>
         </Router>
       </ThemeProvider>

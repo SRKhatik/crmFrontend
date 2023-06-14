@@ -8,11 +8,12 @@ import Toggle from "../Toggle/toggle";
 import LogoutButton from "../Logout/Logout";
 import TodoList from "../Todo/Todo";
 
-
 function StatusDashboard(props) {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
   const statusDetails = createTicketsCount(props.ticketDetails);
+
+
   const totalTicktsCount =
     statusDetails.pending +
     statusDetails.progress +
@@ -21,6 +22,7 @@ function StatusDashboard(props) {
   const userName = localStorage.getItem("name");
   const userType = localStorage.getItem("userType");
 
+  
   return (
     <div className="row d-flex vh-100%">
       <div className="col my-2">
@@ -28,7 +30,6 @@ function StatusDashboard(props) {
           <LogoutButton />
           <Toggle />
         </div>
-
         <div className="container">
           <div className="col">
             <div>
@@ -251,7 +252,7 @@ function StatusDashboard(props) {
           </div>
         </div>
         <div>
-        <TodoList/>
+          <TodoList />
         </div>
       </div>
     </div>

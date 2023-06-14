@@ -42,6 +42,8 @@ const useUsersUpdate=()=>{
 
     const updateUserFn=(e)=>{
         e.preventDefault();
+        const url =`/admin`;
+        navigate(url);
 
         const userData={
             _id:selectedCurrUser._id,
@@ -50,10 +52,13 @@ const useUsersUpdate=()=>{
 
 
         updateUser(userData)
+        
         .then(res=>{
             if(res.status===200){
                 console.log("User Updated Successfully");
                 setUsersUpdateModal(false);
+              
+                
             }
         })
         .catch(err=>{

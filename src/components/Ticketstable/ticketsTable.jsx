@@ -1,9 +1,11 @@
 import React from "react";
 import MaterialTable from "material-table";
 import { deleteTicket } from "../../api/ticket";
+import Swal from "sweetalert2";
+
 
 function TicketsTable(props) {
-  const DeleteTicket = (_id) => {
+ const DeleteTicket = (_id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -14,33 +16,23 @@ function TicketsTable(props) {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.value) {
-      const isticketsdeleted = await deleteTicketApi(_id);
-
-      if(isticketsdeleted){
-        props.onTicketsdeleted ();
-       }
+        const isticketsdeleted = await deleteTicketApi(_id);
       }
-      
     });
   };
 
   const deleteTicketApi = async (_id) => {
     deleteTicket(_id)
       .then((res) => {
-
-        Swal.fire(
-          "Deleted!",
-          `Ticket ${_id} has been deleted.`,
-          "success"
-        );
-        return true ;
+        Swal.fire("Deleted!", `Ticket ${_id} has been deleted.`, "success");
+        return true;
       })
-      
+
       .catch((err) => {
         Swal.fire("ERROR!", `OOPS Something went wrong`, "warning");
         console.log(err);
       });
-      return false;
+    return false;
   };
 
   return (

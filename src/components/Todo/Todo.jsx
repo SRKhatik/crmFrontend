@@ -8,6 +8,7 @@ const TodoList = () => {
   const [editValue, setEditValue] = useState("");
 
   const handleAddTodo = () => {
+    //trim:-to removeing  the extra space between srting 
     if (newTodo.trim() !== "") {
       const currentTime = new Date().toLocaleTimeString();
       const currentDate = new Date().toLocaleDateString();
@@ -44,7 +45,7 @@ const TodoList = () => {
 
   return (
     <div className="container bg-white">
-      <h4 className="text-center text-secondary my-4">Todo-List</h4>
+      <h4 className="text-center text-dark my-4">Todo-List</h4>
       <div className="input-group mb-2">
         <input
           type="text"

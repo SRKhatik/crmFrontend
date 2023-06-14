@@ -14,7 +14,7 @@ function Auth(props) {
   var requiredUserType = null;
   if (page.toUpperCase()=== "ADMIN") {
     requiredUserType = constants.userTypes.admin;
-  } else if (page.toUpperCase() == "CUSTOMER") {
+  } else if (page.toUpperCase() === "CUSTOMER") {
     requiredUserType = constants.userTypes.customer;
   } else if (page.toUpperCase() === "ENGINEER") {
     requiredUserType = constants.userTypes.engineer;

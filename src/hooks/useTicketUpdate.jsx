@@ -3,16 +3,19 @@ import { useState } from "react";
 import { updateTicket } from "../api/ticket";
 
 const useTicketUpdate = (fetchTickets) => {
+
   const [ticketUpdateModal, setTicketUpdateModal] = useState(false);
   const [selectedCurrTicket, setSelectedCurrTicket] = useState({});
 
   const editTicket = (ticketDetail) => {
     setTicketUpdateModal(true);
     setSelectedCurrTicket(ticketDetail);
+    
   };
 
   const closeTicketUpdateModal = () => {
     setTicketUpdateModal(false);
+   
   };
 
   const onTicketUpdate = (e) => {
@@ -32,7 +35,7 @@ const useTicketUpdate = (fetchTickets) => {
 
   const updateTicketFn = (e) => {
     e.preventDefault();
-
+    
     updateTicket(selectedCurrTicket)
       .then((res) => {
         console.log("Ticket update successfully");
