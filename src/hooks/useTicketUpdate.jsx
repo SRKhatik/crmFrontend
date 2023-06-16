@@ -9,7 +9,7 @@ const useTicketUpdate = (fetchTickets) => {
 
   const editTicket = (ticketDetail) => {
     setTicketUpdateModal(true);
-    setSelectedCurrTicket(ticketDetail);
+    setSelectedCurrTicket({...ticketDetail});
     
   };
 

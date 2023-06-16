@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { userSignIn, userSignUp } from "../api/auth";
-
+import BackImg from "../../src/img/6068656.jpg"
 
 function Login() {
   const [showSignup, setShowSignup] = useState(true);
@@ -139,7 +139,7 @@ function Login() {
   return (
     <div
       style={{
-        backgroundImage:"url('src/img/6068656.jpg')",
+        backgroundImage: `url(${BackImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

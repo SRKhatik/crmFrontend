@@ -8,8 +8,6 @@ import {
 import logo from "../components/images/logo3.png";
 import { Link } from "react-scroll";
 
-
-
 const Sidebar = () => {
   const logout = () => {
     localStorage.clear();
@@ -17,10 +15,9 @@ const Sidebar = () => {
   };
 
   const calendar = () => {
-    localStorage.setItem('redirect', '/calendar');
-    window.location.href = '/calendar';
+    localStorage.setItem("redirect", "/calendar");
+    window.location.href = "/calendar";
   };
-  
 
   return (
     <div>
@@ -56,14 +53,14 @@ const Sidebar = () => {
 
           <Link to="users" spy={true} smooth={true}>
             <CNavItem href="#">
-              <i className="bi bi-person-bounding-box text-white m-2 ps-0" />
+              <i className="bi bi-person-bounding-box text-white m-2 " />
               <div className="text-decoration-none text-white  mx-3">Users</div>
             </CNavItem>
           </Link>
-          
+
           <Link to="tickets" spy={true} smooth={true}>
             <CNavItem href="#">
-              <i className="bi bi-ticket-perforated-fill text-white m-2 ps-0" />
+              <i className="bi bi-ticket-perforated-fill text-white m-2 " />
               <div className="text-decoration-none text-white  mx-3">
                 Tickets
               </div>
@@ -72,25 +69,23 @@ const Sidebar = () => {
 
           <Link to="charts" spy={true} smooth={true}>
             <CNavItem href="#">
-              <i className="bi bi-bar-chart-fill text-white m-2 ps-0" />
+              <i className="bi bi-bar-chart-fill text-white m-2 " />
               <div className="text-decoration-none text-white mx-3">Chart</div>
             </CNavItem>
           </Link>
 
           <div onClick={calendar}>
             <CNavItem href="#">
-              <i className="bi bi-calendar2-day text-white m-2 ps-0" />
-              <div className="text-decoration-none text-white mx-3">Calendar</div>
+              <i className="bi bi-calendar2-day text-white m-2 " />
+              <div className="text-decoration-none text-white mx-3">
+                Calendar
+              </div>
             </CNavItem>
           </div>
 
-          <div onClick={logout}>
-            <CNavItem href="#">
-              <i className="bi bi-box-arrow-left text-white m-2 ps-0" />
-              <div className="text-decoration-none text-white mx-3 ">
-                Logout
-              </div>
-            </CNavItem>
+          <div onClick={logout} style={{cursor:"pointer"}} className="d-flex align-items-center">
+              <i className="bi bi-box-arrow-left text-white  my-3 mx-4 " />
+              <div className="text-decoration-none text-white">Logout</div>
           </div>
         </CSidebarNav>
       </CSidebar>

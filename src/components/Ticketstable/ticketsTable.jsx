@@ -17,6 +17,7 @@ function TicketsTable(props) {
     }).then(async (result) => {
       if (result.value) {
         const isticketsdeleted = await deleteTicketApi(_id);
+        props.fetchTickets()
       }
     });
   };

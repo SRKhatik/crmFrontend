@@ -248,6 +248,7 @@ const Admin = () => {
               editTicket={editTicket}
               title={"TICKET RECORDS"}
               ticketDetails={ticketDetails}
+              fetchTickets={fetchTickets}
             />
             <TicketsUpdateModal
               selectedCurrTicket={selectedCurrTicket}
